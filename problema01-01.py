@@ -3,13 +3,13 @@ k = 486 # Cuadras en subida
 n = 85872 # Cantidad de cuadras que recorre Ivo
 cuadrasSubida = 0
 
-cantVueltas = n / t
-print("Cantidad de vueltas que da Ivo: ", cantVueltas)
+vueltas = n // t
+resto = n % t
+planas = t - k
 
-cuadrasSubida = cantVueltas * k
-print("Cantidad de cuadras en subida: ", cuadrasSubida)
+subidas = vueltas * k
 
-if cuadrasSubida > int(cuadrasSubida):
-    cuadrasSubida = int(cuadrasSubida) + 1
+if resto > planas:
+    subidas += resto - planas
 
-print("Cantidad de cuadras en subida (redondeado): ", cuadrasSubida)
+print(subidas)
